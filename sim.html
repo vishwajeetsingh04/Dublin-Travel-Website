@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Home</title>
+<link href="style.css" rel="stylesheet" />
+</head>
+<body>
+<div class="landing-page">
+  <div class="header">
+    <h1 class="heading">Hello! Welcome to Ireland’s Capital.</h1>
+    <h1 class="heading">Dublin</h1>
+  </div>
+  <div class="button-container">
+    <a class="btn" href="#contact-section">Contact Info</a>
+    <a class="btn" href="https://www.google.com/maps/place/Dublin,+Ireland/@53.3243201,-6.2457041,11z/data=!3m1!4b1!4m6!3m5!1s0x48670e80ea27ac2f:0xa00c7a9973171a0!8m2!3d53.3498053!4d-6.2603097!16zL20vMDJjZnQ?entry=ttu&g_ep=EgoyMDI1MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Map</a>
+    <a class="btn" href="https://dublin.ie/newsletter/" target="_blank">Newsletter</a>
+  </div>
+  <div class="home">
+    <h3>Discover the Beauty of Ireland</h3>
+    <p>
+      Ireland's beauty lies in its dramatic landscapes, ranging from rugged coastlines and green hills to historic sites and charming villages, all contributing to its unique and captivating charm.
+    </p>
+    <h3>Explore Top Attractions</h3>
+    <p>
+      Ireland offers a diverse range of attractions, including the iconic Cliffs of Moher, the historic Blarney Castle, and the vibrant city of Dublin with its Guinness Storehouse.
+    </p>
+    <h3>Plan Your Visit</h3>
+    <ul>
+      <li>Day 1: Arrive in Dublin, check into your accommodation, and explore the city center, including Temple Bar, Trinity College, and Dublin Castle.</li>
+      <li>Day 2: Visit the Guinness Storehouse, explore the historic Christ Church Cathedral, and wander through St. Stephen's Green.</li>
+      <li>Day 3: Take a day trip to the charming medieval town of Kilkenny, known for its castle and grey limestone architecture.</li>
+    </ul>
+  </div>
+  <div class="img-container">
+    <img src="download.jpeg" alt="Samuel Beckett Bridge at Sunset" />
+  </div>
+  <div class="container">
+    <a class="pages" href="places.html" target="_blank">
+      <div class="services">
+        <h3>Places to Visit</h3>
+        <p class="pages_para">Explore places to visit in Dublin here.</p>
+        <p>Click here</p>
+      </div>
+    </a>
+    <a class="pages" href="things.html" target="_blank">
+      <div class="services">
+        <h3>Things to Do in Dublin</h3>
+        <p class="pages_para">Do adventurous things.</p>
+        <p>Click here</p>
+      </div>
+    </a>
+    <a class="pages" href="gallery.html" target="_blank">
+      <div class="services">
+        <h3>Watch the Beauty of Dublin</h3>
+        <p class="pages_para">Let's have a video tour.</p>
+        <p>Click here</p>
+      </div>
+    </a>
+    <a class="pages" href="contactUsform.html">
+      <div class="services">
+        <h3>Contact Us</h3>
+        <p class="pages_para">Have any queries? Reach out to us using the form.</p>
+        <p>Click here</p>
+      </div>
+    </a>
+  </div>
+  /<div class="fare-section">
+    <h3>Check Your Fare</h3>
+    <label for="username">Enter Your Name:</label>
+    <input type="text" id="username" placeholder="Your Name" />
+    <label for="age">Enter Your Age:</label>
+    <input type="number" id="age" placeholder="Your Age" />
+    <button onclick="calculateFare()">Check Fare</button>
+    <p id="fare-output"></p>
+  </div>
+  <div class="food-section">
+    <h3>Food Preference</h3>
+    <label for="food-name">Enter Your Name:</label>
+    <input type="text" id="food-name" placeholder="Your Name" />
+    <label for="food-cuisine">Enter Preferred Cuisine:</label>
+    <input type="text" id="food-cuisine" placeholder="Cuisine Type" />
+    <button onclick="showFoodPreference()">Submit</button>
+    <textarea id="food-output" rows="3" readonly></textarea>
+  </div>
+  <footer id="contact-section" class="contact-info">
+    <div class="contact-container">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+      <p>Phone: +353 123 456 789</p>
+      <p>Address: Dublin, Ireland</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/dublinonline/"><img src="download.png" alt="Facebook" /></a>
+        <a href="https://x.com/Dublin_ie"><img src="images (4).png" alt="Twitter" /></a>
+        <a href="https://www.instagram.com/visitdublin/?hl=en"><img src="images (1).jpeg" alt="Instagram" /></a>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+function calculateFare() {
+  let age = document.getElementById("age").value;
+  let output = document.getElementById("fare-output");
+  if (age.trim() === "" || isNaN(age)) {
+    output.textContent = "Please enter a valid age.";
+    return;
+  }
+  age = parseInt(age);
+  if (age <= 19) {
+    output.textContent = "You can pay child’s fare.";
+  } else {
+    output.textContent = "You must pay the adult fare.";
+  }
+}
+
+function showFoodPreference() {
+  let name = document.getElementById("food-name").value;
+  let cuisine = document.getElementById("food-cuisine").value;
+  let output = document.getElementById("food-output");
+  if (name.trim() === "" || cuisine.trim() === "") {
+    output.value = "Please enter your name and food preference.";
+    return;
+  }
+  output.value = `Hello ${name}, your preferred cuisine is ${cuisine}.`;
+}
+</script>
+</body>
+</html>
